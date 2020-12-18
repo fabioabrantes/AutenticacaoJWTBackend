@@ -17,7 +17,7 @@ class UserController{
   async create(req:Request,res:Response){
     
       const {name,email, password} = req.body;
-      
+      console.log(name,email, password);
       const userRepository = getRepository(User);
       
       const user = userRepository.create({

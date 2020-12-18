@@ -11,11 +11,13 @@ import './database/connection';
 const server = express();
 
 server.use(express.json());
+
 server.use(cors());
 
-server.use(productRouter);
-server.use(userRouter);
 server.use(authRouter);
+server.use(userRouter);
+server.use(productRouter);
+
 
 
 server.listen(3333, ()=>{

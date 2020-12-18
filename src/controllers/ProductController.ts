@@ -6,7 +6,6 @@ import Product from '../models/Product';
 class ProductController{
 
   async listProducts(req:Request,res:Response){
-    console.log(req.usuario);
     const productRepository = getRepository(Product);
     const products = await productRepository.find();
     
@@ -14,7 +13,7 @@ class ProductController{
   }
   
   async create(req:Request,res:Response){
-      console.log(req.usuario);
+      
       const {name,price, description} = req.body;
       
       const productRepository = getRepository(Product);
@@ -31,7 +30,7 @@ class ProductController{
     
   }
   async searchProduct(req:Request,res:Response){
-    console.log(req.usuario);
+    
     
     const {id} = req.params;
     
